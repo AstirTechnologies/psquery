@@ -25,7 +25,7 @@ system administrator to obtain the appropriate key.
 
 The `psquery.connect
 <https://turi.com/products/predictive-services/docs/api/psclient/psclient.query_client.html#psclient.query_client.connect>`_
-function is used to connect to the service.
+function is used to connect to the service.::
 
     import psquery
     conn = psquery.connect(query_endpoint_URL, key_id)
@@ -42,11 +42,11 @@ Querying
 Once you have connected, you can query by specifying the endpoint you want to
 query and the parameters. Keep in mind that your key must have sufficient
 privileges to access the endpoint. Admin keys can access all endpoints, but
-API keys must be specifically allowed by endpoint name.
+API keys must be specifically allowed by endpoint name.::
 
     response = conn.query('add', 1, 2)
 
-The response is a dict with the following keys and values.
+The response is a dict with the following keys and values.::
 
     {u'node': u'...', u'uuid': u'...', u'version': 1, u'from_cache': False, u'model': u'add', u'response': 3}
 
@@ -58,7 +58,7 @@ Feedback
 --------
 
 If the endpoint allows it, you can specify `feedback
-<https://turi.com/products/predictive-services/docs/userguide/logging-feedback.html?highlight=feedback>`_:
+<https://turi.com/products/predictive-services/docs/userguide/logging-feedback.html?highlight=feedback>`_:::
 
     conn.feedback(response['uuid'], success=True)
 
