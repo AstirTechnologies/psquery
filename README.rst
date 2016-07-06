@@ -27,8 +27,10 @@ The `psquery.connect
 <https://turi.com/products/predictive-services/docs/api/psclient/psclient.query_client.html#psclient.query_client.connect>`_
 function is used to connect to the service.
 
-    >>> import psquery
-    >>> conn = psquery.connect(query_endpoint_URL, key_id)
+```
+import psquery
+conn = psquery.connect(query_endpoint_URL, key_id)
+```
 
 
 Please consult the `documentation
@@ -44,10 +46,16 @@ query and the parameters. Keep in mind that your key must have sufficient
 privileges to access the endpoint. Admin keys can access all endpoints, but
 API keys must be specifically allowed by endpoint name.
 
-    >>> response = conn.query('add', 1, 2)
-    >>> response
-    {u'node': u'...', u'uuid': u'...', u'version': 1, u'from_cache': False,
-    u'model': u'add', u'response': 3}
+```
+response = conn.query('add', 1, 2)
+```
+
+The response is a dict with the following keys and values.
+
+```
+{u'node': u'...', u'uuid': u'...', u'version': 1, u'from_cache': False,
+u'model': u'add', u'response': 3}
+```  
 
 Please see the `query method documentation
 <https://turi.com/products/predictive-services/docs/api/psclient/psclient.query_client.html#psclient.query_client.QueryClient.query>`_
@@ -56,9 +64,12 @@ for more details.
 Feedback
 --------
 
-If the endpoint allows it, you can specify feedback:
+If the endpoint allows it, you can specify `feedback
+<https://turi.com/products/predictive-services/docs/userguide/logging-feedback.html?highlight=feedback>`_:
 
-    >>> conn.feedback(response['uuid'], success=True)
+```
+conn.feedback(response['uuid'], success=True)
+```
 
 Please see the `feedback method documentation
 <https://turi.com/products/predictive-services/docs/api/psclient/psclient.query_client.html#psclient.query_client.QueryClient.feedback>`_
