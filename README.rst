@@ -1,6 +1,6 @@
 
 Predictive Services Query Client (psquery)
-======================================
+==========================================
 
 This package allows you to query Turi Predictive Services.
 
