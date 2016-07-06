@@ -1,0 +1,12 @@
+*~
+*.pyc
+.idea/
+*.tar.gz
+!tests/files/*
+setup_env.sh
+*.sw*
+env
+env-*
+*.egg-info
+doc/build/*
+doc/source/api/psclient/*
